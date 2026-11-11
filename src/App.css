@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+  color: #222;
+  background: #7cc41d;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  border: 0;
+  text-align: left;
+  display: block;
+}
+
+.page-layout {
+  width: min(90%, 900px);
+  margin: 0 auto;
+  padding-bottom: 48px;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+.page-header {
+  margin-bottom: 36px;
+  padding: 22px 0;
+  border-bottom: 1px solid #444;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 600;
+}
+
+.add-project {
+  margin-bottom: 32px;
+  padding: 24px;
+  border: 1px solid #333;
+  border-radius: 9px;
+}
+
+.add-project h2 {
+  margin: 0 0 18px;
+  font-size: 30px;
+}
+
+.add-project form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.add-project label {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.add-project input,
+.add-project textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 22px;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
+  font: inherit;
+}
+
+.add-project input {
+  height: 46px;
+}
+
+.add-project textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.add-project button {
+  min-width: 130px;
+  padding: 8px 20px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
+  font: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.add-project button:hover {
+  background: #f0f0f0;
+}
+
+.project-list {
+  overflow: hidden;
+  border: 1px solid #333;
+  border-radius: 9px;
+}
+
+.search-area {
+  padding: 16px 20px;
+  border-bottom: 1px solid #999;
+}
+
+.search-area input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
+  font: inherit;
+  font-size: 18px;
+}
+
+.project-items {
+  padding: 12px 24px;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 0;
+}
+
+.project-image,
+.project-placeholder {
+  position: relative;
+  flex: 0 0 86px;
+  width: 86px;
+  height: 86px;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  border-radius: 9px;
+  object-fit: cover;
+}
+
+.project-placeholder::before,
+.project-placeholder::after {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: #222;
+  content: "";
+}
+
+.project-placeholder::before {
+  transform: rotate(45deg);
+}
+
+.project-placeholder::after {
+  transform: rotate(-45deg);
+}
+
+.project-details h2 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.project-details p {
+  margin: 0;
+  font-size: 17px;
+}
+
+.empty-message {
+  margin: 12px 0;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .page-layout {
+    width: calc(100% - 32px);
+  }
+
+  .add-project {
+    padding: 18px;
+  }
+
+  .project-items {
+    padding: 10px 16px;
+  }
+
+  .project-card {
+    gap: 14px;
+  }
+
+  .project-image,
+  .project-placeholder {
+    flex-basis: 68px;
+    width: 68px;
+    height: 68px;
+  }
+
+  .project-details h2 {
+    font-size: 21px;
+  }
+
+  .project-details p {
+    font-size: 15px;
+  }
+}
